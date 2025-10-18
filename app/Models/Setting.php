@@ -9,13 +9,8 @@ class Setting extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
     protected $fillable = [
-        'key',   // <-- Tambahkan ini
-        'value', // <-- Tambahkan ini
+        'key',
+        'value',
     ];
 }
