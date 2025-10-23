@@ -10,18 +10,12 @@ use Illuminate\Support\Facades\Validator;
 
 class SettingController extends Controller
 {
-    /**
-     * Menampilkan semua pengaturan.
-     */
     public function index()
     {
         $settings = Setting::pluck('value', 'key');
         return response()->json($settings);
     }
 
-    /**
-     * Memperbarui pengaturan berbasis teks.
-     */
     public function update(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -42,20 +36,24 @@ class SettingController extends Controller
     }
 
     /**
-     * Mengunggah gambar untuk landing page.
+     * Mengunggah gambar (untuk slider atau halaman lain).
+     * Menerima 'image_key' untuk menentukan setting mana yang akan di-update (e.g., lp_slider_img1)
      */
     public function uploadImage(Request $request)
     {
         $validator = Validator::make($request->all(), [
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+            'image_key' => 'required|string|in:lp_slider_img1,lp_slider_img2,lp_slider_img3,about_image', // Validasi key
         ]);
 
         if ($validator->fails()) {
             return response()->json($validator->errors(), 422);
         }
 
+        $imageKey = $request->image_key;
+
         // Cari setting gambar yang lama
-        $setting = Setting::where('key', 'landing_page_image')->first();
+        $setting = Setting::where('key', $imageKey)->first();
 
         // Hapus gambar lama dari storage jika ada
         if ($setting && $setting->value) {
@@ -67,13 +65,14 @@ class SettingController extends Controller
 
         // Buat atau update record di database dengan path gambar yang baru
         Setting::updateOrCreate(
-            ['key' => 'landing_page_image'],
+            ['key' => $imageKey],
             ['value' => $path]
         );
 
         return response()->json([
             'message' => 'Gambar berhasil diunggah.',
             'path' => $path,
+            'image_key' => $imageKey,
         ]);
     }
 }

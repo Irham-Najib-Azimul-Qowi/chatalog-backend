@@ -12,16 +12,19 @@ class SettingSeeder extends Seeder
      */
     public function run(): void
     {
-        Setting::truncate(); // Menghapus semua data lama untuk menghindari duplikasi
+        Setting::truncate();
 
         // --- PENGATURAN UMUM ---
         Setting::create(['key' => 'seller_whatsapp', 'value' => '6289525456346']);
 
-        // --- KONTEN LANDING PAGE (HERO SECTION) ---
+        // --- KONTEN LANDING PAGE (SLIDER BARU) ---
         Setting::create(['key' => 'landing_page_headline', 'value' => 'Freshly Baked with Love, Every Single Day.']);
         Setting::create(['key' => 'landing_page_tagline', 'value' => 'Dibuat dari bahan-bahan premium pilihan tanpa bahan pengawet.']);
         Setting::create(['key' => 'landing_page_description', 'value' => 'Kami percaya bahwa kue yang lezat berawal dari dapur yang penuh cinta dan bahan-bahan terbaik.']);
-        Setting::create(['key' => 'landing_page_image', 'value' => null]);
+
+        Setting::create(['key' => 'lp_slider_img1', 'value' => null]); // SLOT GAMBAR 1 BARU
+        Setting::create(['key' => 'lp_slider_img2', 'value' => null]); // SLOT GAMBAR 2 BARU
+        Setting::create(['key' => 'lp_slider_img3', 'value' => null]); // SLOT GAMBAR 3 BARU
 
         // --- KONTEN LANDING PAGE (WHY CHOOSE US SECTION) ---
         Setting::create(['key' => 'lp_section_title', 'value' => 'Kenapa Memilih Kami?']);
@@ -39,7 +42,7 @@ class SettingSeeder extends Seeder
         // --- KONTEN HALAMAN "TENTANG KAMI" ---
         Setting::create(['key' => 'about_title', 'value' => 'Cerita Kami']);
         Setting::create(['key' => 'about_content', 'value' => 'Chatalog dimulai dari sebuah dapur rumahan sederhana dengan kecintaan mendalam pada kue berkualitas. Kami percaya bahwa momen terbaik diciptakan bersama sepotong kue yang lezat. Oleh karena itu, kami berkomitmen untuk selalu menggunakan bahan-bahan segar dan resep otentik yang diwariskan dari generasi ke generasi.']);
-        Setting::create(['key' => 'about_image', 'value' => null]); // Untuk gambar halaman tentang kami
+        Setting::create(['key' => 'about_image', 'value' => null]);
 
         // --- KONTEN HALAMAN "KONTAK" ---
         Setting::create(['key' => 'contact_title', 'value' => 'Hubungi Kami']);
