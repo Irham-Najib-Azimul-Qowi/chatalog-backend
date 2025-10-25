@@ -15,6 +15,9 @@ Route::get('/products', [ProductController::class, 'index']);
 Route::get('/products/{id}', [ProductController::class, 'show']);
 Route::get('/settings', [SettingController::class, 'index']);
 Route::post('/checkout', [CheckoutController::class, 'process']);
+Route::get('/homepage-slides', function () {
+    return response()->json(config('slides.homepage_slides'));
+});
 
 // Rute untuk login admin
 Route::post('/login', [AuthController::class, 'login']);

@@ -47,8 +47,8 @@ class SettingSeeder extends Seeder
         // --- KONTEN HALAMAN "KONTAK" ---
         Setting::create(['key' => 'contact_title', 'value' => 'Hubungi Kami']);
         Setting::create(['key' => 'contact_tagline', 'value' => 'Punya pertanyaan atau ingin memesan? Jangan ragu untuk menghubungi kami.']);
-        Setting::create(['key' => 'contact_address', 'value' => 'Jl. Kenangan Indah No. 12, Kota Madiun, Jawa Timur']);
-        Setting::create(['key' => 'contact_email', 'value' => 'pesan@chatalog.com']);
-        Setting::create(['key' => 'contact_phone', 'value' => '0812-3456-7890']);
+        Setting::create(['key' => 'contact_address', 'value' => '6G37+MMH, Unnamed Road, Brahu, Mlilir, Kec. Dolopo, Kabupaten Madiun, Jawa Timur 63174']);
+        Setting::create(['key' => 'contact_email', 'value' => 'zoeliezilux@gmail.com']);
+        Setting::create(['key' => 'contact_phone', 'value' => '0895-2545-6346']);
     }
 }
