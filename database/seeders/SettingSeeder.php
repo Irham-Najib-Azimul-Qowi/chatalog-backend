@@ -22,9 +22,9 @@ class SettingSeeder extends Seeder
         Setting::create(['key' => 'landing_page_tagline', 'value' => 'Dibuat dari bahan-bahan premium pilihan tanpa bahan pengawet.']);
         Setting::create(['key' => 'landing_page_description', 'value' => 'Kami percaya bahwa kue yang lezat berawal dari dapur yang penuh cinta dan bahan-bahan terbaik.']);
 
-        Setting::create(['key' => 'lp_slider_img1', 'value' => null]); // SLOT GAMBAR 1 BARU
-        Setting::create(['key' => 'lp_slider_img2', 'value' => null]); // SLOT GAMBAR 2 BARU
-        Setting::create(['key' => 'lp_slider_img3', 'value' => null]); // SLOT GAMBAR 3 BARU
+        Setting::create(['key' => 'lp_slider_img1', 'value' => 'dummy_images/about/about_jajanan_pasar.jpg']); 
+        Setting::create(['key' => 'lp_slider_img2', 'value' => 'dummy_images/about/about_kentang_mustofa_sukses.jpg']); 
+        Setting::create(['key' => 'lp_slider_img3', 'value' => 'dummy_images/about/about_proses_mustofa.jpg']);
 
         // --- KONTEN LANDING PAGE (WHY CHOOSE US SECTION) ---
         Setting::create(['key' => 'lp_section_title', 'value' => 'Kenapa Memilih Kami?']);
@@ -42,7 +42,7 @@ class SettingSeeder extends Seeder
         // --- KONTEN HALAMAN "TENTANG KAMI" ---
         Setting::create(['key' => 'about_title', 'value' => 'Cerita Kami']);
         Setting::create(['key' => 'about_content', 'value' => 'Chatalog dimulai dari sebuah dapur rumahan sederhana dengan kecintaan mendalam pada kue berkualitas. Kami percaya bahwa momen terbaik diciptakan bersama sepotong kue yang lezat. Oleh karena itu, kami berkomitmen untuk selalu menggunakan bahan-bahan segar dan resep otentik yang diwariskan dari generasi ke generasi.']);
-        Setting::create(['key' => 'about_image', 'value' => null]);
+        Setting::create(['key' => 'about_image', 'value' => 'dummy_images/about/about_proses_mustofa.jpg']);
 
         // --- KONTEN HALAMAN "KONTAK" ---
         Setting::create(['key' => 'contact_title', 'value' => 'Hubungi Kami']);

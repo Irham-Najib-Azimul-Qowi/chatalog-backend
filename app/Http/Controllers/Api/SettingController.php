@@ -12,7 +12,10 @@ class SettingController extends Controller
 {
     public function index()
     {
-        $settings = Setting::pluck('value', 'key');
+        $settings = Setting::all()->mapWithKeys(function ($item) {
+            return [$item->key => $item->value];
+        });
+
         return response()->json($settings);
     }
 
@@ -56,8 +59,8 @@ class SettingController extends Controller
         $setting = Setting::where('key', $imageKey)->first();
 
         // Hapus gambar lama dari storage jika ada
-        if ($setting && $setting->value) {
-            Storage::disk('public')->delete($setting->value);
+        if ($setting && $setting->getRawOriginal('value')) {
+            Storage::disk('public')->delete($setting->getRawOriginal('value'));
         }
 
         // Simpan gambar baru ke folder 'landing-page'

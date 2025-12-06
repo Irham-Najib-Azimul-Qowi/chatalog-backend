@@ -31,9 +31,14 @@ class ProductSeeder extends Seeder
             'Teri Kacang Balado Renyah',
             'Makaroni Spiral Krispi Original',
             'Stik Keju Edam Asin Gurih',
+            'Kerupuk Kulit Ikan Patin',
+            'Emping Melinjo Pedas Manis',
+            'Kripik Usus Ayam Krispi',
+            'Sale Pisang Basah Manis',
+            'Dodol Garut Asli',
         ];
 
-        // Daftar 10 nama file gambar yang sesuai dengan nama produk di atas
+        // Daftar 15 nama file gambar yang sesuai dengan nama produk di atas
         // PASTIKAN INI SAMA PERSIS DENGAN NAMA FILE DI public/dummy_images/products/
         $imageFileNames = [
             'keripik_singkong.jpg', // Contoh: harus ada di public/dummy_images/products/keripik_singkong.jpg
@@ -46,6 +51,11 @@ class ProductSeeder extends Seeder
             'teri_balado.jpg',
             'makaroni_pedas.jpg',
             'stik_keju.jpg',
+            'dendeng_balado.jpg', // Kerupuk Kulit
+            'keripik_singkong.jpg', // Emping
+            'cumi_kering.jpg', // Usus
+            'kacang_mede.jpg', // Sale Pisang
+            'abon_sapi.jpg', // Dodol
         ];
 
 
@@ -62,8 +72,8 @@ class ProductSeeder extends Seeder
         $ingredients = ['bahan alami', 'pilihan terbaik', 'resep keluarga', 'rempah asli Indonesia', 'daging segar'];
         $prepMethods = ['kering sempurna', 'krispi', 'gurih renyah', 'pedas nampol', 'manis legit'];
 
-        // Loop untuk membuat 10 produk
-        for ($i = 0; $i < 10; $i++) {
+        // Loop untuk membuat 15 produk
+        for ($i = 0; $i < 15; $i++) {
             $name = $productNames[$i]; // Ambil nama dari daftar
             $imageFileName = $imageFileNames[$i]; // Ambil nama file gambar yang sesuai
 

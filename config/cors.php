@@ -19,9 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => [
-        'http://localhost:5173', // <-- UBAH BARIS INI
-    ],
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
