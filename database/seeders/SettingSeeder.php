@@ -22,9 +22,9 @@ class SettingSeeder extends Seeder
         Setting::create(['key' => 'landing_page_tagline', 'value' => 'Dibuat dari bahan-bahan premium pilihan tanpa bahan pengawet.']);
         Setting::create(['key' => 'landing_page_description', 'value' => 'Kami percaya bahwa kue yang lezat berawal dari dapur yang penuh cinta dan bahan-bahan terbaik.']);
 
-        Setting::create(['key' => 'lp_slider_img1', 'value' => null]); // SLOT GAMBAR 1 BARU
-        Setting::create(['key' => 'lp_slider_img2', 'value' => null]); // SLOT GAMBAR 2 BARU
-        Setting::create(['key' => 'lp_slider_img3', 'value' => null]); // SLOT GAMBAR 3 BARU
+        Setting::create(['key' => 'lp_slider_img1', 'value' => 'landing-page/slide1.jpg']); // SLOT GAMBAR 1 BARU
+        Setting::create(['key' => 'lp_slider_img2', 'value' => 'landing-page/slide2.jpg']); // SLOT GAMBAR 2 BARU
+        Setting::create(['key' => 'lp_slider_img3', 'value' => 'landing-page/slide3.jpg']); // SLOT GAMBAR 3 BARU
 
         // --- KONTEN LANDING PAGE (WHY CHOOSE US SECTION) ---
         Setting::create(['key' => 'lp_section_title', 'value' => 'Kenapa Memilih Kami?']);
