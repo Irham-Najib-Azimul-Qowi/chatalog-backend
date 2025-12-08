@@ -23,4 +23,23 @@ class Product extends Model
         // 'stock',
         'image',
     ];
+
+    public function getImageAttribute($value)
+    {
+        if ($value) {
+            // Jika path dimulai dengan 'http', kembalikan langsung (jika ada kasus ini)
+            if (str_starts_with($value, 'http')) {
+                return $value;
+            }
+            
+            // Jika path adalah dummy image (seeder lama)
+            if (str_starts_with($value, 'dummy_images')) {
+                return asset($value);
+            }
+
+            // Jika path adalah upload storage (default behavior store())
+            return asset('storage/' . $value);
+        }
+        return null;
+    }
 }

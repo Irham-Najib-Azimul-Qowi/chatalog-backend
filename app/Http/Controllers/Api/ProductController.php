@@ -79,8 +79,8 @@ class ProductController extends Controller
 
         if ($request->hasFile('image')) {
             // Hapus gambar lama jika ada
-            if ($product->image) {
-                Storage::disk('public')->delete($product->image);
+            if ($product->getRawOriginal('image')) {
+                Storage::disk('public')->delete($product->getRawOriginal('image'));
             }
             // Upload gambar baru
             $product->image = $request->file('image')->store('products', 'public');
@@ -99,8 +99,8 @@ class ProductController extends Controller
         }
 
         // Hapus gambar dari storage
-        if ($product->image) {
-            Storage::disk('public')->delete($product->image);
+        if ($product->getRawOriginal('image')) {
+            Storage::disk('public')->delete($product->getRawOriginal('image'));
         }
 
         $product->delete();

@@ -15,6 +15,8 @@ Route::get('/products', [ProductController::class, 'index']);
 Route::get('/products/{id}', [ProductController::class, 'show']);
 Route::get('/settings', [SettingController::class, 'index']);
 Route::post('/checkout', [CheckoutController::class, 'process']);
+// Public (or semi-public for this demo) upload for settings image to fix 404
+Route::post('/settings/image', [SettingController::class, 'uploadImage']);
 Route::get('/homepage-slides', function () {
     return response()->json(config('slides.homepage_slides'));
 });

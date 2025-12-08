@@ -42,7 +42,7 @@ class SettingSeeder extends Seeder
         // --- KONTEN HALAMAN "TENTANG KAMI" ---
         Setting::create(['key' => 'about_title', 'value' => 'Cerita Kami']);
         Setting::create(['key' => 'about_content', 'value' => 'Chatalog dimulai dari sebuah dapur rumahan sederhana dengan kecintaan mendalam pada kue berkualitas. Kami percaya bahwa momen terbaik diciptakan bersama sepotong kue yang lezat. Oleh karena itu, kami berkomitmen untuk selalu menggunakan bahan-bahan segar dan resep otentik yang diwariskan dari generasi ke generasi.']);
-        Setting::create(['key' => 'about_image', 'value' => null]);
+        Setting::create(['key' => 'about_image', 'value' => 'dummy_images/about/about_proses_mustofa.jpg']);
 
         // --- KONTEN HALAMAN "KONTAK" ---
         Setting::create(['key' => 'contact_title', 'value' => 'Hubungi Kami']);
