@@ -22,6 +22,7 @@ class Setting extends Model
             if (str_starts_with($value, 'http')) {
                 return $value;
             }
+
             return asset('storage/' . $value);
         }
         return $value;

@@ -7,9 +7,6 @@ use App\Models\Setting;
 
 class SettingSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         Setting::truncate();
@@ -22,9 +19,9 @@ class SettingSeeder extends Seeder
         Setting::create(['key' => 'landing_page_tagline', 'value' => 'Dibuat dari bahan-bahan premium pilihan tanpa bahan pengawet.']);
         Setting::create(['key' => 'landing_page_description', 'value' => 'Kami percaya bahwa kue yang lezat berawal dari dapur yang penuh cinta dan bahan-bahan terbaik.']);
 
-        Setting::create(['key' => 'lp_slider_img1', 'value' => 'landing-page/slide1.jpg']); // SLOT GAMBAR 1 BARU
-        Setting::create(['key' => 'lp_slider_img2', 'value' => 'landing-page/slide2.jpg']); // SLOT GAMBAR 2 BARU
-        Setting::create(['key' => 'lp_slider_img3', 'value' => 'landing-page/slide3.jpg']); // SLOT GAMBAR 3 BARU
+        Setting::create(['key' => 'lp_slider_img1', 'value' => 'landing-page/slide1.jpg']);
+        Setting::create(['key' => 'lp_slider_img2', 'value' => 'landing-page/slide2.jpg']);
+        Setting::create(['key' => 'lp_slider_img3', 'value' => 'landing-page/slide3.jpg']); 
 
         // --- KONTEN LANDING PAGE (WHY CHOOSE US SECTION) ---
         Setting::create(['key' => 'lp_section_title', 'value' => 'Kenapa Memilih Kami?']);
@@ -43,6 +40,24 @@ class SettingSeeder extends Seeder
         Setting::create(['key' => 'about_title', 'value' => 'Cerita Kami']);
         Setting::create(['key' => 'about_content', 'value' => 'Chatalog dimulai dari sebuah dapur rumahan sederhana dengan kecintaan mendalam pada kue berkualitas. Kami percaya bahwa momen terbaik diciptakan bersama sepotong kue yang lezat. Oleh karena itu, kami berkomitmen untuk selalu menggunakan bahan-bahan segar dan resep otentik yang diwariskan dari generasi ke generasi.']);
         Setting::create(['key' => 'about_image', 'value' => 'dummy_images/about/about_proses_mustofa.jpg']);
+
+        // Story Section 1
+        Setting::create(['key' => 'about_story1_title', 'value' => 'Awal Mula Zoeliez Ilux']);
+        Setting::create(['key' => 'about_story1_text', 'value' => 'Di awal perjalanannya, Zoeliez Ilux dikenal sebagai surganya kue basah tradisional maupun modern. Dengan tangan terampil, kami menyajikan berbagai macam jajanan pasar yang selalu dirindukan, seperti Risol Sayur Sosis Mantenan yang gurih, Dadar Gulung pandan yang harum, Brownies cokelat yang lumer, hingga Kue Tart untuk momen spesial, Roti Pisang yang lembut, dan Lumpur Lapindo yang manis legit. Setiap gigitan adalah perpaduan rasa autentik dan kualitas terbaik, menjadikan Zoeliez Ilux pilihan favorit di berbagai acara dan perayaan.']);
+        Setting::create(['key' => 'about_story1_image', 'value' => 'dummy_images/about/about_jajanan_pasar.jpg']);
+        Setting::create(['key' => 'about_story1_layout', 'value' => 'image-left']);
+
+        // Story Section 2
+        Setting::create(['key' => 'about_story2_title', 'value' => 'Perubahan Fokus ke Kering Kentang Mustofa']);
+        Setting::create(['key' => 'about_story2_text', 'value' => 'Tiga tahun berjalan, di tahun 2019, kami mengambil sebuah keputusan besar yang mengubah arah perjalanan Zoeliez Ilux. Dengan melihat potensi dan tingginya permintaan pasar, kami memutuskan untuk memfokuskan seluruh energi dan kreativitas kami pada satu produk bintang: Kering Kentang Mustofa.']);
+        Setting::create(['key' => 'about_story2_image', 'value' => 'dummy_images/about/about_proses_mustofa.jpg']);
+        Setting::create(['key' => 'about_story2_layout', 'value' => 'image-right']);
+
+        // Story Section 3
+        Setting::create(['key' => 'about_story3_title', 'value' => 'Kesuksesan Kering Kentang Mustofa']);
+        Setting::create(['key' => 'about_story3_text', 'value' => 'Keputusan ini terbukti tepat. Dedikasi kami untuk menyempurnakan Kering Kentang Mustofa dengan resep rahasia yang pedas, manis, dan renyah tak tertandingi, berhasil merebut hati banyak pelanggan. Tak lama setelah fokus ini, pesanan melonjak drastis. Kering Kentang Mustofa Zoeliez Ilux menjadi buah bibir dan hidangan wajib di setiap rumah. Dari camilan sehari-hari hingga pelengkap lauk yang menggugah selera, produk kami kini dikenal luas dan dicintai oleh berbagai kalangan.']);
+        Setting::create(['key' => 'about_story3_image', 'value' => 'dummy_images/about/about_kentang_mustofa_sukses.jpg']);
+        Setting::create(['key' => 'about_story3_layout', 'value' => 'image-left']);
 
         // --- KONTEN HALAMAN "KONTAK" ---
         Setting::create(['key' => 'contact_title', 'value' => 'Hubungi Kami']);

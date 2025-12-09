@@ -27,12 +27,12 @@ class Product extends Model
     public function getImageAttribute($value)
     {
         if ($value) {
-            // Jika path dimulai dengan 'http', kembalikan langsung (jika ada kasus ini)
+            // Jika path dimulai dengan 'http', kembalikan langsung
             if (str_starts_with($value, 'http')) {
                 return $value;
             }
             
-            // Jika path adalah dummy image (seeder lama)
+            // Jika path adalah dummy_images (ada di public root, bukan storage)
             if (str_starts_with($value, 'dummy_images')) {
                 return asset($value);
             }
