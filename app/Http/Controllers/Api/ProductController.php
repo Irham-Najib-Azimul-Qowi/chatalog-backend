@@ -25,6 +25,15 @@ class ProductController extends Controller
         return response()->json(Product::all());
     }
 
+    public function show($id)
+    {
+        $product = Product::find($id);
+        if (!$product) {
+            return response()->json(['message' => 'Product not found'], 404);
+        }
+        return response()->json($product);
+    }
+
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -64,9 +73,9 @@ class ProductController extends Controller
         }
 
         $validator = Validator::make($request->all(), [
-            'name' => 'string|max:255',
+            'name' => 'sometimes|required|string|max:255',
             'description' => 'nullable|string',
-            'price' => 'integer',
+            'price' => 'sometimes|required|integer',
             // 'stock' => 'integer',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);

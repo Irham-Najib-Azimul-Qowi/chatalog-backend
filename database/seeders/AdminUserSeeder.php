@@ -19,7 +19,7 @@ class AdminUserSeeder extends Seeder
             'name' => 'User Spesifik',
             'phone' => '087864307597', 
             'password' => Hash::make('password'), 
-            'role' => 'user', 
+            'role' => 'admin', 
         ]);
 
         // 2. Buat Admin default
@@ -30,14 +30,14 @@ class AdminUserSeeder extends Seeder
             'role' => 'admin',
         ]);
 
-        // 3. Buat 15 user random tambahan
+        // 3. Buat 15 user random tambahan (SEMUA ADMIN)
         $faker = \Faker\Factory::create('id_ID');
         for ($i = 0; $i < 15; $i++) {
             User::create([
                 'name' => $faker->name,
                 'phone' => $faker->phoneNumber,
                 'password' => Hash::make('password'),
-                'role' => 'user',
+                'role' => 'admin',
             ]);
         }
     }

@@ -22,7 +22,8 @@ class SettingController extends Controller
     public function update(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'settings' => 'required|array'
+            'settings' => 'required|array',
+            'settings.*' => 'nullable|string',
         ]);
 
         if ($validator->fails()) {
